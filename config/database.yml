@@ -16,6 +16,11 @@
 #
 default: &default
   adapter: postgresql
+  
+
+development:
+  <<: *default
+  database: testing
   encoding: unicode
   adapter: postgresql
   user: postgres
@@ -27,11 +32,6 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-
-development:
-  <<: *default
-  database: testing
-  
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -88,6 +88,12 @@ test:
 #
 production:
   <<: *default
-  database: deployment_production
-  username: deployment
-  password: <%= ENV['DEPLOYMENT_DATABASE_PASSWORD'] %>
+  database: d365n4p1t1bc6u
+  user: znmaoqdlscytjv
+  password: 01d8ac3957fcfd2c43a771233afb4fe44925a093162322a2532bab9a5b8f657d
+  min_messages: warning
+  pool: 5
+  port: 5432
+  timeout: 5000
+  host_names:
+    -"ec2-174-129-37-15.compute-1.amazonaws.com"
