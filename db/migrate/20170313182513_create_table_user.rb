@@ -5,7 +5,6 @@ class CreateTableUser < ActiveRecord::Migration
       t.float   "display_name"
       
       t.timestamps
-
     end
   end
 end
